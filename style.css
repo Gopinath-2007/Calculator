@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 5px;
+    color: white;
+    height: fit-content;
+  
+}
+
+.display {
+    padding: 5px;
+    background-color: black;
+    height: 100px;
+    width: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.result {
+    width: 100%;
+    padding-bottom: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    text-align: end;
+    font-size: 25px;
+    background-color: transparent;
+}
+
+
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    font-family: 'poppins' sans-serif;
+    gap: 5px;
+}
+
+.clear,
+.equal {
+    grid-column: span 2;
+    width: 100px;
+    border-radius: 25%;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 45%);
+    color: white;
+    font-size: 25px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: hsl(0, 0%, 75%);
+}
+
+.operator,.back,.clear,.equal{
+    background-color: hsl(29, 100%, 50%);
+    color: white;
+}
+
+.operator:hover,.back:hover,.clear:hover,.equal:hover{
+    background-color: hsl(29, 100%, 64%) ;
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: black;
+    }
+
+    .calculator {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-width: 400px;  /* Limit width for better appearance */
+        box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);  /* Subtle shadow effect */
+    }
+}
